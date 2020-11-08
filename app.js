@@ -5,7 +5,15 @@
     o novo array no console.
 */
 
-const randomNumbers = [10, 30, 15, 25, 50, 40, 5]
+const randomNumbers = [10, 30, 15, 25, 50, 40, 5];
+
+const randomNumbersMap = randomNumbers.filter(number => {
+  if (number % 2 != 0) {
+    return number;
+  }
+});
+
+console.log("Exercício 01: ", {randomNumbers, randomNumbersMap})
 
 /*
   02
