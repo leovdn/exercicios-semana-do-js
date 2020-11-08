@@ -24,7 +24,7 @@ console.log("Exercício 01: ", {randomNumbers, randomNumbersMap})
 const crazyNumbers = [937, 5, 395, 402, 501, 333, 502, 781, 3, 691];
 
 const numbersBelow = crazyNumbers.filter(number => number < 501);
-console.log(numbersBelow);
+console.log("Exercício 02: ", numbersBelow);
 
 /*
   03
@@ -33,7 +33,10 @@ console.log(numbersBelow);
     exiba o novo array no console.
 */
 
-const numbers = [5, 7, 3]
+const numbers = [5, 7, 3];
+
+const squareNumbers = numbers.map(number => number * number);
+console.log("Exercício 03: ", squareNumbers);
 
 /*
   04
