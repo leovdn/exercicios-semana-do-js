@@ -23,7 +23,11 @@ console.log("Exercício 01: ", {randomNumbers, randomNumbersMap})
 
 const crazyNumbers = [937, 5, 395, 402, 501, 333, 502, 781, 3, 691];
 
-const numbersBelow = crazyNumbers.filter(number => number < 501);
+const numbersBelow501 = (accumulator, number) => {
+  return number < 501 ? ++accumulator : accumulator
+}
+
+const numbersBelow = crazyNumbers.reduce(numbersBelow501, 0);
 console.log("Exercício 02: ", numbersBelow);
 
 /*
@@ -60,13 +64,9 @@ const tarantinoMovies = [
 ]
 
 
-const newCenturyMovies = tarantinoMovies.filter(movie => {
-  if (movie.release < 2000) {
-    return { name: movie.nome, release: movie.release }
-  }
-})
+const lastCenturyMovies = tarantinoMovies.filter(({release}) => release < 2000)
 
-console.log("Exercício 04: ", newCenturyMovies);
+console.log("Exercício 04: ", lastCenturyMovies);
 
 /*
   05
@@ -85,7 +85,7 @@ const tvShows = [
   { name: 'Watchmen', releaseYear: 2019 }
 ]
 
-const tvShowsNames = tvShows.map(show => show.name);
+const tvShowsNames = tvShows.map(({name}) => name);
 
 console.log("Exercício 05: ", tvShowsNames);
 
@@ -108,10 +108,10 @@ const cart = [
   { name: 'Death Stranding', price: 149.99 }
 ]
 
-const gameNames = cart.map(game => {
-  console.log(` - ${game.name}`)
-})
+const gameNames = cart.reduce((accumulator, { name }) => 
+  `${accumulator}- ${name}\n`, '')
 
+console.log(gameNames)
 /*
   - Nome 1
   - Nome 2
