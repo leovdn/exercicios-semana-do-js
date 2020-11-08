@@ -59,6 +59,15 @@ const tarantinoMovies = [
   { name: 'Kill Bill: Volume 1', release: 2003 }
 ]
 
+
+const newCenturyMovies = tarantinoMovies.filter(movie => {
+  if (movie.release < 2000) {
+    return { name: movie.nome, release: movie.release }
+  }
+})
+
+console.log("Exercício 04: ", newCenturyMovies);
+
 /*
   05
 
@@ -75,6 +84,10 @@ const tvShows = [
   { name: 'House M.D.', releaseYear: 2004 },
   { name: 'Watchmen', releaseYear: 2019 }
 ]
+
+const tvShowsNames = tvShows.map(show => show.name);
+
+console.log("Exercício 05: ", tvShowsNames);
 
 /*
   06
@@ -94,6 +107,10 @@ const cart = [
   { name: 'Resident Evil 2', price: 119.90 },
   { name: 'Death Stranding', price: 149.99 }
 ]
+
+const gameNames = cart.map(game => {
+  console.log(` - ${game.name}`)
+})
 
 /*
   - Nome 1
